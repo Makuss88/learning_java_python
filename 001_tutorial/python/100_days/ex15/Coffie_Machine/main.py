@@ -1,12 +1,17 @@
-print("HELLO")
+from data import resources
+
 # TODO 1. Prompt user by asking “What would you like? (espresso/latte/cappuccino):”
 # a. Check the user’s input to decide what to do next.
 # b. The prompt should show every time action has completed, e.g. once the drink is
 # dispensed. The prompt should show again to serve the next customer.
+print("Welcome in Coffee Machine!!")
+drink = input("What would you like? (espresso = e/latte = l/cappuccino = c):")
 
 # TODO 2. Turn off the Coffee Machine by entering “off” to the prompt.
 # a. For maintainers of the coffee machine, they can use “off” as the secret word to turn off
 # the machine. Your code should end execution when this happens.
+open_machine = 'on'
+while open_machine == 'on':
 
 # TODO 3. Print report.
 # a. When the user enters “report” to the prompt, a report should be generated that shows
@@ -16,6 +21,24 @@ print("HELLO")
 # Coffee: 76g
 # Money: $2.5
 
+    if drink == 'e':
+        print("you choose espresso")
+    elif drink == 'l':
+        print("you choose latte")
+    elif drink == 'c':
+        print("you choose cappuccino")
+    elif drink == 'report':
+        print("you choose report")
+        water = resources.get("water")
+        milk = resources.get("milk")
+        coffee = resources.get("coffee")
+        price = 0
+        print(f"Water: {water}ml")
+        print(f"Milk: {milk}ml")
+        print(f"Coffee: {coffee}g")
+        print(f"Price: ${price}")
+
+    open_machine = 'off'
 # TODO 4. Check resources sufficient?
 # a. When the user chooses a drink, the program should check if there are enough
 # resources to make that drink.
