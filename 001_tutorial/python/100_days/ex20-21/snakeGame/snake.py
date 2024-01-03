@@ -20,8 +20,8 @@ class Snake:
             tim = Turtle('square')
             tim.penup()
             tim.color('white')
-            tim.goto(position)
             tim.speed(1)
+            tim.goto(position)
             self.segments.append(tim)
 
     def moving(self):
@@ -46,3 +46,10 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def add_body(self):
+        tim = Turtle('square')
+        tim.penup()
+        tim.color('white')
+        tim.speed(1)
+        self.segments.append(tim)
