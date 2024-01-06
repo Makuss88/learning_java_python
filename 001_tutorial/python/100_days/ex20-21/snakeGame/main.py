@@ -35,12 +35,11 @@ while is_game:
 
     # detect the wall.
     if abs(snake.head.xcor()) > 280 or abs(snake.head.ycor()) > 280:
-        is_game = False
-        score.game_over()
+        score.reset_score()
+        snake.reset()
 
     for segment in snake.segments[1:]:
         if snake.head.distance(segment) < 10:
-            is_game = False
-            score.game_over()
-
+            score.reset_score()
+            snake.reset()
 screen.exitonclick()
