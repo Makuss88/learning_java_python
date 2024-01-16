@@ -61,8 +61,8 @@ timer_txt = Label(text="Timer", fg=RED, font=(FONT_NAME, 35), bg=GREEN)
 timer_txt.grid(column=1, row=0)
 
 canvas = Canvas(width=200, height=223, bg=GREEN, highlightthickness=0)
-tomate_img = PhotoImage(file="tomato.png")
-canvas.create_image(100, 111, image=tomate_img)
+# tomate_img = PhotoImage(file="tomato.png")
+# canvas.create_image(100, 111, image=tomate_img)
 timer_text = canvas.create_text(
     102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")
 )
