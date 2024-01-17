@@ -13,5 +13,5 @@
 #     f.write("\nnew text")
 
 
-with open('new_file.txt', mode='w') as f:  # another options without  close file
+with open("new_file.txt", mode="w") as f:  # another options without  close file
     f.write("\nnew text")
