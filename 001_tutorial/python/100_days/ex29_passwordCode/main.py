@@ -80,7 +80,6 @@ def generate_password():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def add_password():
-
     web = website_place.get()
     user = user_place.get()
     password = password_place.get()
@@ -97,7 +96,7 @@ def add_password():
                 json.dump(new_data, data_file, indent=4)
         else:
             if web in data:
-                print('we have into data')
+                print("we have into data")
             else:
                 data.update(new_data)
                 with open("my_password.json", mode="w") as data_file:
@@ -107,20 +106,21 @@ def add_password():
             password_place.delete(0, END)
 
 
+# ---------------------------- SEARCH PASSWORD ------------------------------- #
 def search_pass():
     web = website_place.get()
     try:
         with open("my_password.json", mode="r") as data_file:
             data = json.load(data_file)
     except FileNotFoundError:
-        print('we don\'t  have file data')
+        print("we don't  have file data")
     else:
         if web in data:
-            old_pass: str = data[web]['password']
-            old_user: str = data[web]['user']
+            old_pass: str = data[web]["password"]
+            old_user: str = data[web]["user"]
             messagebox.showinfo(message=f"Pass: {old_pass} \n Email: {old_user}")
         else:
-            messagebox.showinfo(message="no,we haven\'t")
+            messagebox.showinfo(message="no,we haven't")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
