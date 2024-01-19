@@ -24,10 +24,22 @@ import pandas
 # TOD 1. Create a dictionary in this format:
 # {"A": "Alfa", "B": "Bravo"}
 
-data = pandas.read_csv('nato_phonetic_alphabet.csv')
+data = pandas.read_csv("nato_phonetic_alphabet.csv")
 data_dict = {row.letter: row.code for (index, row) in data.iterrows()}
 
 # TOD 2. Create a list of the phonetic code words from a word that the user inputs.
-word = input("show me a words: ").upper()
-phonetic_code = [data_dict[letter] for letter in word]
-print(phonetic_code)
+
+
+def generic_code():
+    word = input("show me a words: ").upper()
+
+    try:
+        phonetic_code = [data_dict[letter] for letter in word]
+    except KeyError:
+        print("sorry man, you don't have letters")
+        generic_code()
+    else:
+        print(phonetic_code)
+
+
+generic_code()
